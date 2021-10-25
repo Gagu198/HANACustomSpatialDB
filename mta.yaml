@@ -1,0 +1,19 @@
+_schema-version: "2.1"
+ID: HANA_CUSTOM_SPATIAL_DATA
+version: 0.0.2
+modules:
+- name: spatialdb
+  type: hdb
+  path: spatialdb
+  requires:
+  - name: hdi_spatialdb
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+resources:
+- name: hdi_spatialdb
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: HANA_CUSTOM_SPATIAL_SCHEMA
+  properties:
+    hdi-container-name: ${service-name}

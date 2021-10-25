@@ -1,0 +1,29 @@
+INSERT INTO AU_NSW_TRAINSTATION_DATA
+SELECT ROW_NUMBER() Over () as "ID","Train_Station" AS "TRAIN_STATION", STRING_AGG("LAT" || ' ' || "LONG" ,',' ORDER BY "ID") AS STRINGAGG 
+from "TB_Station_Entrance_Location"
+group by "Train_Station";
+
+
+WITH SRC_Table AS
+(select row_number() over (partition by "Train_Station" order by ID) as ID, "Train_Station", LAT, LONG FROM "HANA_CUSTOM_SPATIAL_SCHEMA_1"."TB_Station_Entrance_Location")
+
+SELECT
+"Train_Station",
+NEW ST_POLYGON( 
+	'POLYGON((' || STRING_AGG( LONG || ' ' || LAT, ', ' ORDER BY ID ) || '))'
+	, 4326)    --.ST_TRANSFORM(3857)
+	.ST_ASGEOJSON()
+	FROM (
+select ID, "Train_Station", LAT, LONG FROM SRC_Table
+UNION ALL
+SELECT 10000000, "Train_Station", LAT, LONG FROM SRC_Table WHERE ID=1
+)
+GROUP BY "Train_Station";
+
+
+SELECT NEW ST_Point(150.92412099775362, -33.7131698147841).ST_SRID(1000004326).ST_BUFFER(5,'kilometer').ST_ASGEOJSON() FROM dummy;
+
+
+SELECT NEW ST_Point(150.92412099775362, -33.7131698147841).ST_SRID(1000004326).ST_BUFFER(5,'kilometer').ST_TRANSFORM(4326).ST_ASGEOJSON() FROM dummy;
+
+https://geojson.tools/

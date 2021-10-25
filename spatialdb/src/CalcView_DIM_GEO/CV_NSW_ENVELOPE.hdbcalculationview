@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_NSW_ENVELOPE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_NSW_ENVELOPE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="ViewEnvelope">
+    <resourceUri>ViewEnvelope</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="ViewEnvelope">
+  <attributes>
+    <attribute id="CLUSTER_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLUSTER_ID"/>
+      <keyMapping columnObjectName="ViewEnvelope" columnName="CLUSTER_ID"/>
+    </attribute>
+    <attribute id="CLUSTERENVELOPE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLUSTERENVELOPE"/>
+      <keyMapping columnObjectName="ViewEnvelope" columnName="CLUSTERENVELOPE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

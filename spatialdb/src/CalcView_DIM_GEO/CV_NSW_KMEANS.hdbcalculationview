@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_NSW_KMEANS" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_NSW_KMEANS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="ViewKmeans">
+    <resourceUri>ViewKmeans</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="ViewKmeans">
+  <attributes>
+    <attribute id="LAD_COUNT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAD_COUNT"/>
+      <keyMapping columnObjectName="ViewKmeans" columnName="LAD_COUNT"/>
+    </attribute>
+    <attribute id="ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping columnObjectName="ViewKmeans" columnName="ID"/>
+    </attribute>
+    <attribute id="SHAPE_HEX" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHAPE_HEX"/>
+      <keyMapping columnObjectName="ViewKmeans" columnName="SHAPE_HEX"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

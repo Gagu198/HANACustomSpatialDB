@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_NSW_LOC_L2" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_NSW_LOC_L2"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="AU_NSW_LOC_L2">
+    <resourceUri>AU_NSW_LOC_L2</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="AU_NSW_LOC_L2">
+  <attributes>
+    <attribute id="ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping columnObjectName="AU_NSW_LOC_L2" columnName="ID"/>
+    </attribute>
+    <attribute id="NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="AU_NSW_LOC_L2" columnName="NAME"/>
+    </attribute>
+    <attribute id="SHAPE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHAPE"/>
+      <keyMapping columnObjectName="AU_NSW_LOC_L2" columnName="SHAPE"/>
+    </attribute>
+    <attribute id="SHAPEPOINT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHAPEPOINT"/>
+      <keyMapping columnObjectName="AU_NSW_LOC_L2" columnName="SHAPEPOINT"/>
+    </attribute>
+    <attribute id="IS_LEAF" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IS_LEAF"/>
+      <keyMapping columnObjectName="AU_NSW_LOC_L2" columnName="IS_LEAF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

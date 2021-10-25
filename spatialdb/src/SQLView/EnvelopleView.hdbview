@@ -1,0 +1,6 @@
+View "ViewEnvelope" AS
+SELECT ST_ClusterID() AS cluster_id, 
+ST_ClusterEnvelope() AS clusterenvelope
+FROM "AU_NSW_LGA_L1"
+GROUP CLUSTER BY SHAPEPOINT
+USING GRID X CELLS 10 Y CELLS 10;
